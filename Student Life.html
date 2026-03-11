@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us – Sto. Niño NHS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">Sto. Niño NHS</div>
+
+   <nav>
+       
+       <!-- SIDEBAR -->
+       <ul class="sidebar">
+           <li onclick="hideSidebar()"><a href="#">✕</a></li>
+           
+           <li><a href="program.html">Faculty and Staff</a></li>
+           <li><a href="Student Life.html">Student Life</a></li>
+           <li><a href="Admission.html">Admission</a></li>
+           <li><a href="Resources.html">Resources</a></li>
+       </ul>
+       
+       <!-- NORMAL NAVBAR -->
+       <ul>
+           <li class="hideOnMobile"><a href="index.html">Home</a></li>
+           <li class="hideOnMobile"><a href="about.html">About Us</a></li>
+           
+           
+           <!-- HAMBURGER BUTTON -->
+           <li class="menu-button" onclick="showSidebar()"><a href="#">☰</a></li>
+       </ul>
+       
+   </nav>
+
+</header>
+
+<!-- ABOUT PREVIEW -->
+<section id="about-preview" class="section light-bg">
+
+<h2>STUDENT ORGANIZATIONS</h2>
+
+<p>
+Meet the newly elected Supreme Secondary Learner Government officers for School Year 2026–2027, led by senior high school student Scarleth Lismoras.
+</p>
+
+<div class="image-container">
+    <!-- Image preview -->
+    <img id="preview" src="images/groups.jpeg" alt="Student Organizations" class="about-img" onclick="openModal(this.src)">
+
+    <!-- Add/Change Image Button -->
+    <label for="imageUpload" class="plus-btn">+</label>
+
+    <!-- Remove Image Button -->
+    <button class="remove-btn" onclick="removeImage()">×</button>
+
+    <!-- Hidden file input -->
+    <input type="file" id="imageUpload" accept="image/*" hidden>
+</div>
+
+</section>
+
+<section class="section light-bg">
+    
+    <h2>STUDENT ACTIVITIES AND EVENTS</h2>
+    
+    <div class="mv-container vertical">
+        
+        <!-- Photo -->
+        <div class="image-wrapper">
+            <img src="images/events.jpeg" alt="Student Activities" onclick="openModal(this.src)">
+        </div>
+        
+        <!-- Text Content -->
+        
+    </div>
+    
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light-bg">
+<h2>Contact Us</h2>
+<p><strong>Address:</strong> Sto. Niño, San Agustin, Surigao Del Sur</p>
+<p><strong>Email:</strong> stoninohigh@gmail.com</p>
+<p><strong>Phone:</strong> (02) 123-4567</p>
+</section>
+
+<footer>
+<p>&copy; 2025 Sto. Niño National High School | Designed by Franz Ray Gee A. Castel</p>
+</footer>
+
+<!-- MODAL FOR ENLARGED IMAGE -->
+<div class="modal" id="modal">
+    <span class="close-btn" onclick="closeModal()">← Back</span>
+    <img id="modal-img" src="" alt="Enlarged Image">
+</div>
+
+<!-- IMAGE ADD/CHANGE/REMOVE SCRIPT -->
+<script>
+const upload = document.getElementById("imageUpload");
+const preview = document.getElementById("preview");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+
+// Add or change image
+upload.addEventListener("change", function(){
+    const file = this.files[0];
+    if(file){
+        preview.src = URL.createObjectURL(file);
+        document.querySelector(".remove-btn").style.display = "inline-block";
+    }
+});
+
+// Remove image
+function removeImage(){
+    preview.src = "";
+    document.querySelector(".remove-btn").style.display = "none";
+}
+
+// Open modal for enlargement
+function openModal(src){
+    modal.style.display = "flex";
+    modalImg.src = src;
+}
+
+// Close modal
+function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+}
+</script>
+
+<script>
+    function showSidebar() {
+        document.querySelector('.sidebar').style.right = "0";
+    }
+    
+    function hideSidebar() {
+        document.querySelector('.sidebar').style.right = "-250px";
+    }
+</script>
+
+</body>
+</html>
