@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEM – Sto. Niño NHS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Keep your original style but improve spacing and readability */
+    .stem-box {
+      background-color: #D0F0C0; /* soft green */
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      line-height: 1.8;
+      font-size: 16px; /* ~15pt like Word */
+    }
+
+    .stem-box h4 {
+      font-size: 22px; /* slightly bigger heading */
+      margin-bottom: 12px;
+      color: #004AAD;
+    }
+
+    .stem-box p {
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Sto. Niño NHS</div>
+    <nav>
+      <ul class="sidebar">
+        <li onclick="hideSidebar()"><a href="#">✕</a></li>
+        <li><a href="program.html">Faculty and Staff</a></li>
+        <li><a href="Student Life.html">Student Life</a></li>
+        <li><a href="Admission.html">Admission</a></li>
+        <li><a href="Resources.html">Resources</a></li>
+      </ul>
+
+      <ul>
+        <li class="hideOnMobile"><a href="index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="about.html">About Us</a></li>
+        <li class="menu-button" onclick="showSidebar()"><a href="#">☰</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section light-bg">
+    <div class="admission-box stem-box">
+      <h4>🔬 STEM (Science, Technology, Engineering, and Mathematics)</h4>
+      <p>
+        STEM is for students who love exploring how things work and solving problems using science and math. They study subjects like Calculus, Physics, Biology, Chemistry, and Robotics. Students in this strand practice critical thinking and experiment with real-world problems.
+      </p>
+      <p>
+        <strong>Examples:</strong> Designing a small robot, conducting experiments, analyzing data for a science project.
+      </p>
+      <p>
+        <strong>Best for:</strong> Future engineers, doctors, architects, data analysts, and IT specialists.
+      </p>
+      <p>
+        <strong>Goal:</strong> To help students become problem solvers and innovators in science and technology.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section light-bg">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Sto. Niño, San Agustin, Surigao Del Sur</p>
+    <p><strong>Email:</strong> stoninohigh@gmail.com</p>
+    <p><strong>Phone:</strong> (02) 123-4567</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sto. Niño National High School | Designed by Franz Ray Gee A. Castel</p>
+  </footer>
+
+  <script>
+    const sidebar = document.querySelector('.sidebar');
+    const menuButton = document.querySelector('.menu-button');
+
+    function showSidebar() {
+      sidebar.style.right = "0";
+    }
+
+    function hideSidebar() {
+      sidebar.style.right = "-250px";
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!sidebar.contains(e.target) && !menuButton.contains(e.target)) {
+        hideSidebar();
+      }
+    });
+  </script>
+</body>
+</html>

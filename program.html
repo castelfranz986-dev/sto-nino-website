@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs – Sto. Niño NHS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Sto. Niño NHS</div>
+    <nav>
+
+        <!-- SIDEBAR -->
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#">✕</a></li>
+
+            <li><a href="program.html">Faculty and Staff</a></li>
+            <li><a href="Student Life.html">Student Life</a></li>
+            <li><a href="Admission.html">Admission</a></li>
+            <li><a href="Resources.html">Resources</a></li>
+        </ul>
+
+        <!-- NORMAL NAVBAR -->
+        <ul>
+            <li class="hideOnMobile"><a href="index.html">Home</a></li>
+            <li class="hideOnMobile"><a href="about.html">About Us</a></li>
+            
+
+            <!-- HAMBURGER BUTTON -->
+            <li class="menu-button" onclick="showSidebar()"><a href="#">☰</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<section class="section programs-section">
+    <h2>Our Academic Programs</h2>
+    <div class="programs-container">
+        <a href="stem.html" class="program-card">STEM</a>
+        <a href="humms.html" class="program-card">HUMSS</a>
+        <a href="tailoring.html" class="program-card">Tailoring</a>
+        <a href="aqua.html" class="program-card">Aquaculture</a>
+    </div>
+</section>
+<section class="section light-bg">
+    <h2>Achievements and Recognitions</h2>
+    <div class="achievement-container">
+        <!-- Manually added images -->
+        <div class="image-wrapper">
+            <img src="images/journalism.jpeg" alt="Achievement 1" onclick="openModal(this.src)">
+            <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
+        </div>
+        <div class="image-wrapper">
+            <img src="images/champion.jpeg" alt="Achievement 2" onclick="openModal(this.src)">
+            <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
+        </div>
+        <div class="image-wrapper">
+            <img src="images/aban.jpeg" alt="Achievement 3" onclick="openModal(this.src)">
+            <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
+        </div>
+        <!-- Add more manually by copying this block -->
+    </div>
+    <div class="achievement-buttons">
+        <input type="file" id="add-image" accept="image/*" style="display:none" multiple>
+        <button class="plus-btn" onclick="document.getElementById('add-image').click()">+</button>
+    </div>
+</section>
+
+<!-- ENLARGED IMAGE MODAL -->
+<div class="modal" id="modal">
+    <span class="close-btn" onclick="closeModal()">← Back</span>
+    <img id="modal-img" src="" alt="Enlarged Achievement">
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="section light-bg">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Sto. Niño, San Agustin, Surigao Del Sur</p>
+    <p><strong>Email:</strong> stoninohigh@gmail.com</p>
+    <p><strong>Phone:</strong> (02) 123-4567</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Sto. Niño National High School | Designed by Franz Ray Gee A. Castel</p>
+</footer>
+
+<script>
+const container = document.querySelector('.achievement-container');
+const input = document.getElementById('add-image');
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+
+// Add image from file input
+input.addEventListener('change', function() {
+    const files = Array.from(this.files);
+    files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const div = document.createElement('div');
+            div.classList.add('image-wrapper');
+
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.onclick = () => openModal(img.src);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.classList.add('remove-btn');
+            removeBtn.innerText = '×';
+            removeBtn.onclick = () => div.remove();
+
+            div.appendChild(img);
+            div.appendChild(removeBtn);
+            container.appendChild(div);
+        }
+        reader.readAsDataURL(file);
+    });
+});
+
+// Modal functions
+function openModal(src) {
+    modal.style.display = 'flex';
+    modalImg.src = src;
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+}
+
+
+</script>
+
+<script>
+    function showSidebar() {
+        document.querySelector('.sidebar').style.right = "0";
+    }
+    
+    function hideSidebar() {
+        document.querySelector('.sidebar').style.right = "-250px";
+    }
+</script>
+</body>
+</html>
