@@ -73,67 +73,67 @@
 <div class="achievement-container">
 
 <div class="image-wrapper">
-<img src="images/1.jpeg" alt="Faculty 1" onclick="openModal(this.src)">
+<img src="1.jpeg" alt="Faculty 1" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/2.jpeg" alt="Faculty 2" onclick="openModal(this.src)">
+<img src="2.jpeg" alt="Faculty 2" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/3.jpeg" alt="Faculty 3" onclick="openModal(this.src)">
+<img src="3.jpeg" alt="Faculty 3" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/4.jpeg" alt="Faculty 4" onclick="openModal(this.src)">
+<img src="4.jpeg" alt="Faculty 4" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/5.jpeg" alt="Faculty 5" onclick="openModal(this.src)">
+<img src="5.jpeg" alt="Faculty 5" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/6.jpeg" alt="Faculty 6" onclick="openModal(this.src)">
+<img src="6.jpeg" alt="Faculty 6" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/7.jpeg" alt="Faculty 7" onclick="openModal(this.src)">
+<img src="7.jpeg" alt="Faculty 7" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/8.jpeg" alt="Faculty 8" onclick="openModal(this.src)">
+<img src="8.jpeg" alt="Faculty 8" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/9.jpeg" alt="Faculty 9" onclick="openModal(this.src)">
+<img src="9.jpeg" alt="Faculty 9" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/10.jpeg" alt="Faculty 10" onclick="openModal(this.src)">
+<img src="10.jpeg" alt="Faculty 10" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/11.jpeg" alt="Faculty 11" onclick="openModal(this.src)">
+<img src="11.jpeg" alt="Faculty 11" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/12.jpeg" alt="Faculty 12" onclick="openModal(this.src)">
+<img src="12.jpeg" alt="Faculty 12" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/13.jpeg" alt="Faculty 13" onclick="openModal(this.src)">
+<img src="13.jpeg" alt="Faculty 13" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/14.jpeg" alt="Faculty 14" onclick="openModal(this.src)">
+<img src="14.jpeg" alt="Faculty 14" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/15.jpeg" alt="Faculty 15" onclick="openModal(this.src)">
+<img src="15.jpeg" alt="Faculty 15" onclick="openModal(this.src)">
 </div>
 
 <div class="image-wrapper">
-<img src="images/16.jpeg" alt="Faculty 16" onclick="openModal(this.src)">
+<img src="16.jpeg" alt="Faculty 16" onclick="openModal(this.src)">
 </div>
 
 </div>
@@ -213,111 +213,4 @@ function closeModal() {
     }
 </script>
 </body>
-    </html><section class="section programs-section">
-    <h2>Our Academic Programs</h2>
-    <div class="programs-container">
-        <a href="stem.html" class="program-card">STEM</a>
-        <a href="humms.html" class="program-card">HUMSS</a>
-        <a href="tailoring.html" class="program-card">Tailoring</a>
-        <a href="aqua.html" class="program-card">Aquaculture</a>
-    </div>
-</section>
-<section class="section light-bg">
-    <h2>Achievements and Recognitions</h2>
-    <div class="achievement-container">
-        <!-- Manually added images -->
-        <div class="image-wrapper">
-            <img src="journalism.jpeg" alt="Achievement 1" onclick="openModal(this.src)">
-            <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
-        </div>
-        <div class="image-wrapper">
-            <img src="champion.jpeg" alt="Achievement 2" onclick="openModal(this.src)">
-            <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
-        </div>
-        <div class="image-wrapper">
-            <img src="aban.jpeg" alt="Achievement 3" onclick="openModal(this.src)">
-            <button class="remove-btn" onclick="this.parentElement.remove()">×</button>
-        </div>
-        <!-- Add more manually by copying this block -->
-    </div>
-    <div class="achievement-buttons">
-        <input type="file" id="add-image" accept="image/*" style="display:none" multiple>
-        <button class="plus-btn" onclick="document.getElementById('add-image').click()">+</button>
-    </div>
-</section>
-
-<!-- ENLARGED IMAGE MODAL -->
-<div class="modal" id="modal">
-    <span class="close-btn" onclick="closeModal()">← Back</span>
-    <img id="modal-img" src="" alt="Enlarged Achievement">
-</div>
-
-<!-- CONTACT -->
-<section id="contact" class="section light-bg">
-    <h2>Contact Us</h2>
-    <p><strong>Address:</strong> Sto. Niño, San Agustin, Surigao Del Sur</p>
-    <p><strong>Email:</strong> stoninohigh@gmail.com</p>
-    <p><strong>Phone:</strong> (02) 123-4567</p>
-</section>
-
-<footer>
-    <p>&copy; 2025 Sto. Niño National High School | Designed by Franz Ray Gee A. Castel</p>
-</footer>
-
-<script>
-const container = document.querySelector('.achievement-container');
-const input = document.getElementById('add-image');
-const modal = document.getElementById('modal');
-const modalImg = document.getElementById('modal-img');
-
-// Add image from file input
-input.addEventListener('change', function() {
-    const files = Array.from(this.files);
-    files.forEach(file => {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const div = document.createElement('div');
-            div.classList.add('image-wrapper');
-
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.onclick = () => openModal(img.src);
-
-            const removeBtn = document.createElement('button');
-            removeBtn.classList.add('remove-btn');
-            removeBtn.innerText = '×';
-            removeBtn.onclick = () => div.remove();
-
-            div.appendChild(img);
-            div.appendChild(removeBtn);
-            container.appendChild(div);
-        }
-        reader.readAsDataURL(file);
-    });
-});
-
-// Modal functions
-function openModal(src) {
-    modal.style.display = 'flex';
-    modalImg.src = src;
-}
-
-function closeModal() {
-    modal.style.display = 'none';
-    modalImg.src = '';
-}
-
-
-</script>
-
-<script>
-    function showSidebar() {
-        document.querySelector('.sidebar').style.right = "0";
-    }
-    
-    function hideSidebar() {
-        document.querySelector('.sidebar').style.right = "-250px";
-    }
-</script>
-</body>
-</html>
+        </html>
